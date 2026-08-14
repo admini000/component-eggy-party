@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+<meta charset="UTF‑8">
+<title>Lua生成器｜可复制</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;padding:16px;color:#fff;font-size:13px}
+.item{display:flex;align-items:center;border:2px solid #fff;padding:7px 10px;margin:8px 0;gap:10px;flex-wrap:wrap}
+.name{width:340px}
+.inp{flex:1;min-width:240px;padding:4px;border:none;outline:none}
+.btn{border:2px solid #fff;background:#000;color:#fff;padding:4px 10px;cursor:pointer}
+#output{width:100%;min-height:280px;background:#111;color:#3f3;padding:10px;border:2px solid #fff;white-space:pre;font-family:Consolas,monospace;margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="item"><span class="name">失心熊盒子</span><input class="inp" value="102654"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">神剑号</span><input class="inp" value="150001"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">广告牌</span><input class="inp" value="100210"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队 2格楼梯间 墙壁</span><input class="inp" value="104779"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">新主城 普通建筑2</span><input class="inp" value="100219"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">新主城 普通建筑4</span><input class="inp" value="100221"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">新主城 普通建筑1</span><input class="inp" value="100218"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">竹子</span><input class="inp" value="100222"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">新主城 普通建筑3</span><input class="inp" value="100220"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">摩天轮底座</span><input class="inp" value="100333"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">红包</span><input class="inp" value="101314"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">十字竹子围栏</span><input class="inp" value="100223"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队 2格楼梯间 地板</span><input class="inp" value="104778"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">摩天轮圆环</span><input class="inp" value="100332"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队 画中女郎房间扶手</span><input class="inp" value="104785"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队 走廊单开门</span><input class="inp" value="104787"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">猪猪侠联动座椅</span><input class="inp" value="104791"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队走廊L型走廊拼接口</span><input class="inp" value="104786"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">挂画</span><input class="inp" value="100299"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">中式屋顶</span><input class="inp" value="100231"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">寻宝队撤离车</span><input class="inp" value="104790"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">农场传送门</span><input class="inp" value="102570"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">主城 蛋仔雕像</span><input class="inp" value="100040"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">惊魂寻宝队 宝箱 金宝箱</span><input class="inp" value="104439"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">惊魂寻宝队 宝物 哥特克朗金币</span><input class="inp" value="104438"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">惊魂寻宝队 宝物 金雕</span><input class="inp" value="104440"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">惊魂寻宝队 宝物 金书</span><input class="inp" value="104441"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">惊魂寻宝队 宝物 咖啡</span><input class="inp" value="104442"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">东东椅子玩具</span><input class="inp" value="104235"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">奶龙椅子玩具</span><input class="inp" value="103608"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">大鹅椅子玩具</span><input class="inp" value="103182"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">道具 弹板</span><input class="inp" value="1401190"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">道具 蹦床</span><input class="inp" value="1401210"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">传送球</span><input class="inp" value="1401170"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 雷神镖</span><input class="inp" value="1405030"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 雪球</span><input class="inp" value="1405020"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 泡泡</span><input class="inp" value="1405070"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 变羊</span><input class="inp" value="1405040"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 惊吓盒</span><input class="inp" value="1405110"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">决战技 幽灵 发射幽灵</span><input class="inp" value="1405100"><button class="btn" onclick="copyOne(this)">复制</button></div>
+<div class="item"><span class="name">泡泡玛特 失心熊</span><input class="inp" value="102654"><button class="btn" onclick="copyOne(this)">复制</button></div>
+
+<pre id="output"></pre>
+
+<script>
+const list = [
+102654,150001,100210,104779,100219,100221,100218,100222,100220,100333,
+101314,100223,104778,100332,104785,104787,104791,104786,100299,100231,
+104790,102570,100040,104439,104438,104440,104441,104442,104235,103608,
+103182,1401190,1401210,1401170,1405030,1405020,1405070,1405040,1405110,1405100,102654
+];
+let htmlText = "";
+list.forEach(n=>{
+    htmlText += `EditorAPI.create_obstacle(${n}, math.Vector3(0, 0, 0))\n`;
+})
+document.getElementById('output').innerText = htmlText;
+
+function copyOne(btn){
+    let val = btn.parentElement.querySelector('.inp').value;
+    let line = `EditorAPI.create_obstacle(${val}, math.Vector3(0, 0, 0))`;
+    navigator.clipboard.writeText(line);
+    alert("已复制："+line);
+}
+</script>
+</body>
+</html>
